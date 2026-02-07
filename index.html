@@ -1,23 +1,5 @@
-    
-                                                                                                                                                                                                                                                                                                                                                                                                                Our cybersecurity wing focuses on vulnerability research, threat intelligence, and securing digital swamps against modern adversaries.
-                                                                                                                                                                                                                                                                                                                                                                                                                            </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                        <code class="block bg-black p-4 rounded-lg text-green-500 font-mono text-sm border border-slate-800">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        $ marshlytes-lab --scan --target global-infrastructure<br>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        [SYSTEM] Scanning... No vulnerabilities found. Marshlytes Protected.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </code>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </section>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <footer class="border-t border-slate-800 mt-20 pt-16 pb-8 px-6">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <h3 class="font-bold text-white mb-4">MARSHLYTES</h3>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <p class="text-slate-500 text-sm">Empowering students and startups with secure tech infrastructure.</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <h4 class="text-blue-400 font-bold mb-4">Legal</h4>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <ul class="text-slate-500 text-sm space-y-2">
-                                                                                                                        <!doctype html>
+                                                                                                                                                                                                                                                                                                                                          </p>
+                                                                                                                                                                                                                                                                                               <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -86,6 +68,465 @@
       --text: #e6f7ff;
       --card: #07121a;
       --border: rgba(255,255,255,0.06);
+
+      --shadow: 0 8px 26px rgba(2,6,10,0.6);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* Container */
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:28px;}
+
+    /* Header / Nav */
+    header{position:sticky;top:0;backdrop-filter: blur(6px);background:color-mix(in srgb, var(--surface) 80%, transparent);border-bottom:1px solid var(--border);z-index:40}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:44px;height:44px;border-radius:10px;background:var(--logo-bg);display:flex;align-items:center;justify-content:center;color:var(--logo-color);font-weight:700;font-family:Poppins;
+      box-shadow:var(--shadow);
+    }
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--text);text-decoration:none;font-weight:600}
+    .cta-primary{background:var(--brand-gradient);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(14,122,255,0.12)}
+    .hamburger{display:none;background:none;border:0;padding:8px}
+
+    /* Theme toggle */
+    .theme-toggle {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:transparent;
+      border:1px solid var(--border);
+      padding:8px;
+      border-radius:10px;
+      cursor:pointer;
+      color:var(--text);
+      font-weight:600;
+    }
+    .theme-toggle svg{display:block}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
+    .hero h1{font-family:Poppins, Inter;font-size:34px;margin:0 0 12px;line-height:1.05}
+    .hero p{color:var(--muted);margin:0 0 20px}
+    .hero .actions{display:flex;gap:12px}
+    .mock-device{
+      background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));
+      border-radius:18px;padding:18px;border:1px solid var(--border);box-shadow:var(--shadow);
+      height:320px;display:flex;align-items:center;justify-content:center;
+    }
+
+    /* Cards grid */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);min-height:120px;border:1px solid var(--border)}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .badge{display:inline-block;padding:6px 8px;border-radius:999px;font-weight:700;font-size:12px;color:#fff}
+    .badge.live{background:#10b981}
+    .badge.dev{background:linear-gradient(90deg,var(--brand-blue),var(--brand-orange));color:#fff}
+
+    /* Featured projects */
+    .projects{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+    .project{background:var(--surface);border-radius:12px;padding:16px;border:1px solid var(--border);display:flex;gap:12px;align-items:center}
+    .project .icon{width:56px;height:56px;border-radius:10px;background: linear-gradient(135deg,var(--icon-bg-start),var(--icon-bg-end));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--icon-fill);box-shadow: 0 6px 14px rgba(15,23,36,0.06)}
+    .project .icon svg{width:28px;height:28px;fill:currentColor}
+
+    /* Why Marshlytes */
+    .why{display:flex;gap:18px;margin-top:28px}
+    .why .item{flex:1;background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 90%, transparent));padding:18px;border-radius:12px;border:1px solid var(--border)}
+
+    /* Marshlytes Lab teaser (dark) */
+    .lab-teaser{background:linear-gradient(180deg,var(--lab-bg),color-mix(in srgb,var(--lab-bg) 90%, transparent));color:var(--text);padding:18px;border-radius:12px;display:flex;gap:16px;align-items:center;border:1px solid var(--border)}
+    .lab-teaser .dot{width:12px;height:12px;border-radius:50%;background:var(--lab-accent);box-shadow:0 0 8px rgba(29,185,84,0.18)}
+
+    /* Footer */
+    footer{margin-top:48px;padding:28px 0;border-top:1px solid var(--border);background:transparent}
+    .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;align-items:start}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Utility icon class */
+    .icon { width:56px;height:56px;border-radius:10px;background: linear-gradient(135deg,var(--icon-bg-start),var(--icon-bg-end));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--icon-fill);box-shadow: 0 6px 14px rgba(15,23,36,0.06) }
+    .icon svg{width:28px;height:28px;fill:currentColor}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr; text-align:left}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .projects{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .hamburger{display:block}
+    }
+    @media (max-width:560px){
+      .cards{grid-template-columns:1fr}
+      .wrap{padding:18px}
+      .hero h1{font-size:26px}
+    }
+
+    /* Reduced motion respect */
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav" role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true" title="Marshlytes">
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="color:var(--logo-color)">
+            <path d="M3 12a9 9 0 1118 0 9 9 0 01-18 0zm9-5.5c1.93 0 3.5 1.57 3.5 3.5S13.93 13.5 12 13.5 8.5 11.93 8.5 10 10.07 6.5 12 6.5z" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <div>
+          <div style="font-weight:700">Marshlytes</div>
+          <div style="font-size:12px;color:var(--muted)">Building secure, scalable digital products</div>
+        </div>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#lab">Labs</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="cta-primary" href="#products">View Products</a>
+      </nav>
+
+      <div style="display:flex;gap:10px;align-items:center">
+        <!-- Theme toggle button -->
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <!-- Icon will be swapped by JS; both present for accessibility -->
+          <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <!-- default: sun icon (light) -->
+            <path d="M12 4.5V2m0 20v-2.5M4.5 12H2m20 0h-2.5M5.6 5.6L4 4m16 16l-1.6-1.6M5.6 18.4L4 20m16-16L20.4 5.6M12 7a5 5 0 100 10 5 5 0 000-10z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span style="font-size:13px">Theme</span>
+        </button>
+
+        <button class="hamburger" aria-expanded="false" aria-controls="mobile-menu" id="hamburger" aria-label="Open menu">
+          <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="22" height="2" rx="1" fill="currentColor"/>
+            <rect y="6" width="22" height="2" rx="1" fill="currentColor"/>
+            <rect y="12" width="22" height="2" rx="1" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" style="display:none;background:color-mix(in srgb, var(--surface) 96%, transparent);border-top:1px solid var(--border);">
+      <div class="wrap" style="padding-top:12px;padding-bottom:12px;display:flex;flex-direction:column;gap:10px">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#lab">Labs</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="cta-primary" href="#products">View Products</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="wrap" role="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <h1 id="hero-heading">Building digital products for people, security, and scale.</h1>
+        <p>Apps • Platforms • Cybersecurity</p>
+        <div class="actions" role="group" aria-label="Primary actions">
+          <a class="cta-primary" href="#products">View Products</a>
+          <a href="#lab" style="padding:10px 14px;border-radius:10px;border:1px solid var(--border);text-decoration:none;font-weight:700;color:var(--text)">Explore Marshlytes Lab</a>
+        </div>
+
+        <!-- What we do cards -->
+        <div class="cards" style="margin-top:28px">
+          <article class="card" aria-labelledby="c1">
+            <h3 id="c1">UniVerse</h3>
+            <div style="color:var(--muted);font-size:14px">Student & public social platform — Chat • Posts • Communities</div>
+            <div style="margin-top:12px"><span class="badge dev">In development</span></div>
+          </article>
+
+          <article class="card" aria-labelledby="c2">
+            <h3 id="c2">Marshlytes Lab</h3>
+            <div style="color:var(--muted);font-size:14px">Cybersecurity research — vulnerability research, audits, ethical hacking</div>
+            <div style="margin-top:12px"><span class="badge live">Research</span></div>
+          </article>
+
+          <article class="card" aria-labelledby="c3">
+            <h3 id="c3">Software Solutions</h3>
+            <div style="color:var(--muted);font-size:14px">Custom platforms and future apps — roadmap coming soon</div>
+            <div style="margin-top:12px"><span class="badge dev">Planned</span></div>
+          </article>
+        </div>
+      </div>
+
+      <aside class="mock-device" aria-hidden="true">
+        <!-- Abstract network illustration using CSS variables for gradient stops -->
+        <svg width="320" height="220" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract network illustration">
+          <defs>
+            <linearGradient id="mockGradient" x1="0" x2="1">
+              <stop id="mockGradientStop1" offset="0" stop-color="var(--icon-bg-start)"/>
+              <stop id="mockGradientStop2" offset="1" stop-color="var(--icon-bg-end)"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="320" height="220" rx="18" fill="url(#mockGradient)"/>
+          <g transform="translate(24,24)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="40" cy="40" r="6" fill="var(--brand-blue)"/>
+            <circle cx="120" cy="30" r="6" fill="var(--brand-orange)"/>
+            <circle cx="200" cy="80" r="6" fill="#10b981"/>
+            <path d="M40 40 C80 20, 140 20, 200 80" stroke="#94a3b8" stroke-width="2"/>
+          </g>
+        </svg>
+      </aside>
+    </section>
+
+    <!-- Featured Projects -->
+    <section aria-labelledby="projects-heading" style="margin-top:18px">
+      <h2 id="projects-heading" style="font-size:20px;margin:0 0 12px">Featured projects</h2>
+      <div class="projects">
+        <div class="project" role="article" aria-label="UniVerse project">
+          <div class="icon" aria-hidden="true" title="UniVerse icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14h-2v-2h2v2zm0-4h-2V6h2v6z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-weight:700">UniVerse</div>
+            <div class="small" style="margin-top:6px">A student-first social platform for communities, chat, and discovery. <span style="font-weight:700;color:var(--muted)">Status:</span> In development</div>
+          </div>
+        </div>
+
+        <div class="project" role="article" aria-label="Marshlytes Lab project">
+          <div class="icon" style="background:linear-gradient(135deg,#071014,#0b0f10);color:var(--lab-accent)" aria-hidden="true" title="Marshlytes Lab icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M12 2L15 8l6 .5-4.5 3.5L18 20l-6-4-6 4 1.5-8L3 8.5 9 8 12 2z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-weight:700">Marshlytes Lab</div>
+            <div class="small" style="margin-top:6px">Security research, audits, and responsible disclosure. <span style="font-weight:700;color:var(--muted)">Status:</span> Active</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Marshlytes -->
+    <section aria-labelledby="why-heading" style="margin-top:28px">
+      <h2 id="why-heading" style="font-size:20px;margin:0 0 12px">Why Marshlytes</h2>
+      <div class="why" role="list">
+        <div class="item" role="listitem">
+          <strong>Privacy-first mindset</strong>
+          <div class="small" style="margin-top:8px">We design products with data minimization, clear controls, and privacy-respecting defaults.</div>
+        </div>
+        <div class="item" role="listitem">
+          <strong>Built by developers</strong>
+          <div class="small" style="margin-top:8px">Engineering-first approach: secure defaults, observability, and scalable architecture.</div>
+        </div>
+        <div class="item" role="listitem">
+          <strong>Focus on Africa & global users</strong>
+          <div class="small" style="margin-top:8px">Local-first UX, low-bandwidth optimizations, and inclusive design for diverse markets.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marshlytes Lab teaser -->
+    <section id="lab" aria-labelledby="lab-heading" style="margin-top:28px">
+      <h2 id="lab-heading" style="font-size:20px;margin:0 0 12px">Marshlytes Lab</h2>
+      <div class="lab-teaser" role="region" aria-label="Marshlytes Lab overview">
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="dot" aria-hidden="true"></div>
+            <div style="font-weight:700">Cybersecurity research & development</div>
+          </div>
+          <p style="margin-top:10px;color:var(--muted)">Focused on web & app security, vulnerability research, and ethical disclosure. We do not perform illegal hacking or data abuse.</p>
+        </div>
+        <div style="min-width:160px;text-align:right">
+          <a href="#contact" class="cta-primary" style="background:var(--lab-accent);border-radius:8px;padding:8px 12px;color:#071014">Report a vulnerability</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About teaser -->
+    <section id="about" aria-labelledby="about-heading" style="margin-top:28px">
+      <h2 id="about-heading" style="font-size:20px;margin:0 0 12px">About</h2>
+      <div style="display:flex;gap:16px;align-items:center">
+        <div style="width:84px;height:84px;border-radius:12px;background:var(--brand-gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:Poppins">H</div>
+        <div>
+          <div style="font-weight:700">Marshlytes</div>
+          <div class="small" style="margin-top:6px">Founder & Lead Developer: Hammed — building privacy-first, developer-led products with a focus on Africa and global scale.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-heading" style="margin-top:28px">
+      <h2 id="contact-heading" style="font-size:20px;margin:0 0 12px">Contact</h2>
+      <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+        <div style="min-width:260px">
+          <div style="font-weight:700">Email</div>
+          <div class="small" style="margin-top:6px">hello@marshlytes.com</div>
+        </div>
+
+        <div style="min-width:260px">
+          <div style="font-weight:700">Social</div>
+          <div class="small" style="margin-top:6px">GitHub • Twitter • LinkedIn</div>
+        </div>
+
+        <div style="min-width:260px">
+          <div style="font-weight:700">Beta / Waitlist</div>
+          <div class="small" style="margin-top:6px">Interested in UniVerse? <a href="#contact" style="font-weight:700;color:var(--brand-blue)">Join the waitlist</a></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid" role="contentinfo">
+        <div>
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="logo" style="width:48px;height:48px">
+              <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="color:var(--logo-color)">
+                <path d="M3 12a9 9 0 1118 0 9 9 0 01-18 0zm9-5.5c1.93 0 3.5 1.57 3.5 3.5S13.93 13.5 12 13.5 8.5 11.93 8.5 10 10.07 6.5 12 6.5z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight:700">Marshlytes</div>
+              <div class="small">Building secure, scalable digital products.</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-weight:700;margin-bottom:8px">Products</div>
+          <div class="small">UniVerse; Marshlytes Lab; Software Solutions</div>
+        </div>
+
+        <div>
+          <div style="font-weight:700;margin-bottom:8px">Company</div>
+          <div class="small">About; Contact; Privacy Policy; Terms</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;border-top:1px solid var(--border);padding-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div class="small">© 2026 Marshlytes. All rights reserved.</div>
+              <div class="small">Made with care • Privacy-first</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Elements
+    const htmlEl = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    const THEME_KEY = 'marshlytes_theme'; // localStorage key
+
+    // Utility: set theme on <html> via data-theme attribute
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        htmlEl.setAttribute('data-theme', 'dark');
+        themeToggle.setAttribute('aria-pressed', 'true');
+        // moon icon
+        themeIcon.innerHTML = `
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+        `;
+      } else {
+        htmlEl.removeAttribute('data-theme');
+        themeToggle.setAttribute('aria-pressed', 'false');
+        // sun icon
+        themeIcon.innerHTML = `
+          <path d="M12 4.5V2m0 20v-2.5M4.5 12H2m20 0h-2.5M5.6 5.6L4 4m16 16l-1.6-1.6M5.6 18.4L4 20m16-16L20.4 5.6M12 7a5 5 0 100 10 5 5 0 000-10z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        `;
+      }
+    }
+
+    // Determine initial theme:
+    // 1. localStorage preference
+    // 2. system preference (prefers-color-scheme)
+    // 3. default to light
+    function initialTheme() {
+      try {
+        const stored = localStorage.getItem(THEME_KEY);
+        if (stored === 'dark' || stored === 'light') return stored;
+      } catch (e) { /* ignore storage errors */ }
+
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return prefersDark ? 'dark' : 'light';
+    }
+
+    // Toggle handler
+    function toggleTheme() {
+      const current = htmlEl.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch (e) { /* ignore storage errors */ }
+    }
+
+    // Initialize theme on load
+    (function(){
+      const theme = initialTheme();
+      applyTheme(theme);
+    })();
+
+    // Event listeners
+    themeToggle.addEventListener('click', toggleTheme);
+    themeToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleTheme();
+      }
+    });
+
+    // Mobile menu toggle
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.style.display = expanded ? 'none' : 'block';
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+          // close mobile menu on selection
+          if(window.innerWidth < 980 && mobileMenu.style.display === 'block'){
+            mobileMenu.style.display = 'none';
+            hamburger.setAttribute('aria-expanded','false');
+          }
+        }
+      });
+    });
+
+    // Respect reduced motion preference: if user prefers reduced motion, avoid smooth scroll
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', (e)=>{ /* no smooth scroll */ });
+      });
+    }
+  </script>
+</body>
+</html>
 
       --shadow: 0 8px 26px rgba(2,6,10,0.6);
     }
