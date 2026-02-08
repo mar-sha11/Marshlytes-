@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background-color: #ffe6e6; /* Fallback */
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden; /* Prevent scrollbars during emoji rain */
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+            max-width: 90%;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff4d6d;
+            font-size: 3em;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-weight: 600;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.1);
+            background-color: #ff2a51;
+        }
+
+        #noBtn {
+            background-color: #e2e2e2;
+            color: #333;
+        }
+
+        /* Success Message Styling */
+        #success-message {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffe6e6;
+            z-index: 20;
+            text-align: center;
+        }
+
+        #success-message h2 {
+            font-family: 'Pacifico', cursive;
+            color: #ff4d6d;
+            font-size: 3.5em;
+            padding: 20px;
+        }
+
+        #success-message img {
+            max-width: 300px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        /* Floating Hearts Animation */
+        .heart {
+            position: fixed;
+            color: #ff4d6d;
+            font-size: 20px;
+            top: -10vh;
+            animation: fall linear forwards;
+            z-index: 15;
+            user-select: none;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container" id="question-card">
+        <h1>Will you be my Valentine? 🌹</h1>
+        <div class="buttons">
+            <button id="yesBtn">YES! 😍</button>
+            <button id="noBtn">No 😢</button>
+        </div>
+    </div>
+
+    <div id="success-message">
+        <h2>awwwnn 💞 , thanks for accepting!</h2>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2Q1anF6Y2gycW14bnZ5b3l5b3J6Z3V2bmZ5b3J6Z3V2bmZ5b3J6ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/KxtjPgBHlTm8i MaX9/giphy.gif" alt="Cute Bears Hugging">
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const questionCard = document.getElementById('question-card');
+        const successMessage = document.getElementById('success-message');
+
+        // --- Logic for the "No" Button ---
+        // This makes the button run away when hovered or touched
+        const moveButton = () => {
+            // Get window dimensions
+            const maxWidth = window.innerWidth - noBtn.offsetWidth;
+            const maxHeight = window.innerHeight - noBtn.offsetHeight;
+
+            // Generate random coordinates
+            const randomX = Math.random() * maxWidth;
+            const randomY = Math.random() * maxHeight;
+
+            // Apply new position
+            noBtn.style.position = 'fixed'; // Change to fixed to allow free movement
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        };
+
+        noBtn.addEventListener('mouseover', moveButton);
+        noBtn.addEventListener('touchstart', moveButton); // For mobile users
+
+        // --- Logic for the "Yes" Button ---
+        yesBtn.addEventListener('click', () => {
+            // Hide the question
+            questionCard.style.display = 'none';
+            // Show the success message
+            successMessage.style.display = 'flex';
+            
+            // Start the emoji shower
+            startEmojiRain();
+        });
+
+        // --- Emoji Rain Logic ---
+        function startEmojiRain() {
+            // Create a heart every 50ms
+            setInterval(createHeart, 50);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            const emojis = ['💕', '💖', '💗', '💓', '💞', '😍', '🌹'];
+            
+            // Pick a random emoji
+            heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            heart.classList.add('heart');
+            
+            // Random horizontal position (0 to 100vw)
+            heart.style.left = Math.random() * 100 + 'vw';
+            
+            // Random size (10px to 40px)
+            const size = Math.random() * 30 + 10; 
+            heart.style.fontSize = size + 'px';
+            
+            // Random animation duration (2s to 5s)
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            
+            document.body.appendChild(heart);
+
+            // Remove heart after animation ends to keep browser clean
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+    </script>
+
+</body>
+</html>
